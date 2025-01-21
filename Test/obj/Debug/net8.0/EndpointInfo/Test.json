@@ -1,0 +1,478 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Test",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/MyOffice/create": {
+      "post": {
+        "tags": [
+          "MyOffice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeCreateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeCreateModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeCreateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/MyOffice/read": {
+      "post": {
+        "tags": [
+          "MyOffice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeQueryModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeQueryModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeQueryModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MyOfficeDataModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MyOfficeDataModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MyOfficeDataModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/MyOffice/update": {
+      "put": {
+        "tags": [
+          "MyOffice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeUpdateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeUpdateModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeUpdateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/MyOffice/delete": {
+      "delete": {
+        "tags": [
+          "MyOffice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeDeleteModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeDeleteModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyOfficeDeleteModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MyOfficeCreateModel": {
+        "type": "object",
+        "properties": {
+          "acpD_SID": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Cname": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Ename": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Sname": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Email": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "acpD_Stop": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "acpD_StopMemo": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_LoginID": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_LoginPWD": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_NowDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acpD_NowID": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_UPDDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acpD_UPDID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MyOfficeDataModel": {
+        "type": "object",
+        "properties": {
+          "acpD_SID": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Cname": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Ename": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Sname": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Email": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "acpD_Stop": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "acpD_StopMemo": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_LoginID": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_LoginPWD": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_NowDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acpD_NowID": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_UPDDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acpD_UPDID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MyOfficeDeleteModel": {
+        "required": [
+          "acpD_SID"
+        ],
+        "type": "object",
+        "properties": {
+          "acpD_SID": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MyOfficeQueryModel": {
+        "type": "object",
+        "properties": {
+          "acpD_SID": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Cname": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Email": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "acpD_Stop": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MyOfficeUpdateModel": {
+        "required": [
+          "acpD_SID"
+        ],
+        "type": "object",
+        "properties": {
+          "acpD_SID": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "acpD_Cname": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Email": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "acpD_UPDDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acpD_UPDID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
