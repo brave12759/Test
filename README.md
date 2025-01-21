@@ -39,6 +39,7 @@ MyOffice_ACPD API 專案
 4.安裝與配置
 
   4-1.下載專案：
+  
     https://github.com/brave12759/Test
 		
   4-2.安裝依賴項：
@@ -47,6 +48,7 @@ MyOffice_ACPD API 專案
     dotnet restore
 		
   4-3.配置資料庫：
+  
     打開 appsettings.json 檔案。
     更新連線字串：
     "ConnectionStrings": {
@@ -54,9 +56,11 @@ MyOffice_ACPD API 專案
     }
 		
   4-4.執行資料庫腳本：
+  
     使用 SQL Server Management Studio (SSMS) 執行專案內提供的SQL腳本，建立資料表與儲存程序
 		
   4-5.啟動專案：
+  
     在專案資料夾中執行
     訪問 Swagger：
     打開瀏覽器，訪問：
@@ -64,6 +68,7 @@ MyOffice_ACPD API 專案
     通過 Swagger 測試 API。
 		
   4-6.測試 API：
+  
     使用提供的 JSON 範例測試每個 CRUD 操作
     使用 Swagger
     瀏覽至 /swagger。
