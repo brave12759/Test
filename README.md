@@ -21,13 +21,19 @@ MyOffice_ACPD API 專案
 3.需求
 
   3-1.開發環境：
+  
     Visual Studio 2022 或更新版本
+    
     .NET Core 8
+    
     SQL Server 2016 或更新版本
 		
   3-2.NuGet 套件：
+  
     Dapper
+    
     Swashbuckle.AspNetCore
+    
     Swashbuckle.AspNetCore.Filters
 
 4.安裝與配置
@@ -37,6 +43,7 @@ MyOffice_ACPD API 專案
 		
   4-2.安裝依賴項：
     運行以下命令來還原必要的 NuGet 套件：
+    
     dotnet restore
 		
   4-3.配置資料庫：
